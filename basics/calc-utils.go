@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
 	"strconv"
 	"strings"
 	"time"
@@ -61,4 +62,17 @@ func goBreakLoops(randomNum int) {
 		}
 		i++
 	}
+}
+
+func diceRoller(dice, sides, rolls int) {
+	randomGem := rand.New(rand.NewSource(time.Now().UnixNano()))
+	for i := 0; i < dice; i++ {
+		currentRoll := rolls
+		for currentRoll > 0 {
+			randomNum := randomGem.Intn(sides)
+			fmt.Println("dice num:", i, "roll num: ", rolls-currentRoll, "result:", randomNum)
+			currentRoll--
+		}
+	}
+
 }

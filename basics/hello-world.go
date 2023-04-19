@@ -17,4 +17,5 @@ func main() {
 
 	goWhileLoop(10)
 	goBreakLoops(10)
+	diceRoller(2, 6, 3)
 }
