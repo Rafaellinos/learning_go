@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math"
 	"strconv"
 	"strings"
@@ -41,4 +42,23 @@ func binaryToDecimal(bytesString string) int64 {
 		sum += int64(math.Pow(2, float64(i))) * localRes
 	}
 	return sum
+}
+
+func goWhileLoop(num int) {
+	i := 0
+	for i < num {
+		fmt.Println("current number: ", i)
+		i++
+	}
+}
+
+func goBreakLoops(randomNum int) {
+	i := 0
+	for {
+		fmt.Println("In loop ...", i)
+		if i == randomNum {
+			break
+		}
+		i++
+	}
 }

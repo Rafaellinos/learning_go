@@ -14,4 +14,7 @@ func main() {
 	fmt.Println("reversed name is: ", res)
 
 	fmt.Println("decimal result:", binaryToDecimal("101010"))
+
+	goWhileLoop(10)
+	goBreakLoops(10)
 }
