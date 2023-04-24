@@ -15,3 +15,23 @@
 //------------
 
 // variables -> Name, data, etc
+
+
+### Go lang Advantages:
+
+
+- Garbage collector
+- Go routines (green thread, thread in userland or light threads) -> threads managed by golang
+- Avoid concurrent problems with variables by using channels to share variables
+- Only 25 keywords to learn
+- Easy to learn
+- Static code analysis
+- Can use C libs
+- Compiled to machine code
+- Easy to manage concurrency
+
+
+### Go lang Disadvantages
+
+- Young language -> absence of some SDKs
+- Can lose "time-to-market" compared to languages like Python

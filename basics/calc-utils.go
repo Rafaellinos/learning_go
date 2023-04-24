@@ -74,5 +74,4 @@ func diceRoller(dice, sides, rolls int) {
 			currentRoll--
 		}
 	}
-
 }
