@@ -34,4 +34,13 @@
 ### Go lang Disadvantages
 
 - Young language -> absence of some SDKs
-- Can lose "time-to-market" compared to languages like Python
+- Can lose "time-to-market" compared to languages like Python (Time Consuming)
+
+
+#### Compile to windows
+
+```shell
+GOOS=windows go build main.go
+```
+
+<p>The command above generates a main.exe</p>
