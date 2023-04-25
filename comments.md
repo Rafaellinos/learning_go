@@ -11,10 +11,23 @@
 // mod -> manage modules and dependencies , mod tidy -> update dependencies
 // test -> runs the projects test
 // fmt -> format all source files
+// go mod init live <- creates a local package
+// go mod tidy <- download dependencies
 
 //------------
 
+// go frameworks
+
+// echo framework, http
+
 // variables -> Name, data, etc
+
+### Go characteristics
+
+- Not Object-Oriented
+- Has built-ins like net/http (like python)
+- Command: panic(err) -> stops the application
+- defer db.Close() -> starts a context, when the code ends, executes the defer func
 
 
 ### Go lang Advantages:
@@ -33,6 +46,7 @@
 
 ### Go lang Disadvantages
 
+
 - Young language -> absence of some SDKs
 - Can lose "time-to-market" compared to languages like Python (Time Consuming)
 
@@ -44,3 +58,36 @@ GOOS=windows go build main.go
 ```
 
 <p>The command above generates a main.exe</p>
+
+
+#### Run local server
+
+```go
+package main
+
+import (
+	"fmt"
+	"net/http"
+) //built-in
+
+type Product struct { // like classes
+	ID    string
+	Name  string
+	Price float64
+}
+
+func main() {
+	product := Product{
+		ID:    "1",
+		Name:  "Product 1",
+		Price: 100,
+	}
+	fmt.Println(product.Name)
+	http.HandleFunc("/hello", homeHandler)
+	http.ListenAndServe(":3000", nil) // Go routine
+}
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("hello World"))
+}
+```

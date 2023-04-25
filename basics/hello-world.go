@@ -18,4 +18,14 @@ func main() {
 	goWhileLoop(10)
 	goBreakLoops(10)
 	diceRoller(2, 6, 3)
+
+	getSampleStructures()
+
+	rec := Rectangle{
+		5,
+		5,
+	}
+	fmt.Println("Perimeter of 5x5 Rectangle is:", calculateRectanglePerimeter(rec))
+	fmt.Println("Area of 5x5 Rectangle is:", calculateRectangleArea(rec))
+
 }
