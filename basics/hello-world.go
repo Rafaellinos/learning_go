@@ -27,5 +27,5 @@ func main() {
 	}
 	fmt.Println("Perimeter of 5x5 Rectangle is:", calculateRectanglePerimeter(rec))
 	fmt.Println("Area of 5x5 Rectangle is:", calculateRectangleArea(rec))
-
+	arraysExample()
 }
