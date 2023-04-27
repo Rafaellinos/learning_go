@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 /*
 Arrays are fixed-size
@@ -33,7 +35,7 @@ func arraysExample() {
 		{1, 1, "poor house"},
 		{0, 0, "funny house"},
 	}
-
+	// index, item := range Array
 	for _, house := range richHouses {
 		if house.windows == 0 && house.doors == 0 {
 			fmt.Println("No way out from", house.name)
@@ -42,4 +44,30 @@ func arraysExample() {
 		}
 	}
 
+}
+
+type Product struct {
+	name  string
+	price float64
+}
+
+func printProduct(products []Product) {
+	fmt.Println("Last item:", products[len(products)-1])
+	fmt.Println("Total items:", len(products))
+	var totalCost float64
+	for _, product := range products {
+		totalCost += product.price
+	}
+	fmt.Println("Total cost:", totalCost)
+}
+
+func exerciseArray() {
+	shoppingList := []Product{ // [] slice, [...] array, [number] array
+		{"Spoon", 5.99},
+		{"Fork", 5.99},
+		{"Plate", 10.00},
+	}
+	printProduct(shoppingList)
+	shoppingList = append(shoppingList[:], Product{"Pan", 21.50})
+	printProduct(shoppingList)
 }
