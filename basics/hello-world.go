@@ -31,5 +31,6 @@ func main() {
 	exerciseArray()
 	// slices
 	sliceTesting()
+	codingExercise()
 
 }

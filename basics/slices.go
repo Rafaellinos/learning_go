@@ -34,3 +34,20 @@ func sliceTesting() {
 	}
 	fmt.Println(board)
 }
+
+type Part string
+
+func showLine(line []Part) {
+	for idx, _ := range line {
+		fmt.Println("part: ", idx)
+	}
+}
+
+func codingExercise() {
+	assemblyLine := make([]Part, 3)
+	showLine(assemblyLine)
+	assemblyLine = append(assemblyLine, make([]Part, 2)...)
+	showLine(assemblyLine)
+	assemblyLine = assemblyLine[3:]
+	showLine(assemblyLine)
+}
