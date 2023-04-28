@@ -51,14 +51,23 @@ type Product struct {
 	price float64
 }
 
-func printProduct(products []Product) {
-	fmt.Println("Last item:", products[len(products)-1])
-	fmt.Println("Total items:", len(products))
+func printProduct(products *[]Product) {
+	productsArray := *products // de-referenciate
+	fmt.Println("Last item:", productsArray[len(productsArray)-1])
+	fmt.Println("Total items:", len(productsArray))
 	var totalCost float64
-	for _, product := range products {
+	for _, product := range productsArray {
 		totalCost += product.price
 	}
 	fmt.Println("Total cost:", totalCost)
+}
+
+type StrucEx struct {
+	test string
+}
+
+func testPointers(struc12 *StrucEx) {
+	fmt.Println(struc12)
 }
 
 func exerciseArray() {
@@ -67,7 +76,11 @@ func exerciseArray() {
 		{"Fork", 5.99},
 		{"Plate", 10.00},
 	}
-	printProduct(shoppingList)
-	shoppingList = append(shoppingList[:], Product{"Pan", 21.50})
-	printProduct(shoppingList)
+	printProduct(&shoppingList) // passing variable as reference
+	shoppingList = append(shoppingList, Product{"Pan", 21.50})
+	printProduct(&shoppingList)
+	strucxY := StrucEx{
+		"rafael",
+	}
+	testPointers(&strucxY)
 }
