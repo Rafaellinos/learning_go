@@ -32,5 +32,5 @@ func main() {
 	// slices
 	sliceTesting()
 	codingExercise()
-
+	examplePackage()
 }

@@ -1,7 +1,11 @@
 package main
 
-import brutils "github.com/Rafaellinos/br-utils"
+import (
+	"fmt"
+	brutils "github.com/Rafaellinos/br-utils"
+)
 
 func examplePackage() {
-	brutils.FormatCnpj("12345678901234")
+	teste := brutils.FormatCpfCnpj("42223485898")
+	fmt.Println(teste)
 }
