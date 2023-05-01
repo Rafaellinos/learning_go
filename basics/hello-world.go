@@ -33,4 +33,9 @@ func main() {
 	sliceTesting()
 	codingExercise()
 	examplePackage()
+	rangeTeste()
+	mapsExample()
+	exerciseMaps()
+	pointersExample()
+	libraryExercise()
 }
