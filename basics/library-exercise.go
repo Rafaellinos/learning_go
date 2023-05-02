@@ -14,8 +14,8 @@ type Title string
 type BookInfo struct {
 	id           int
 	available    bool
-	checkOutDate string
-	checkInDate  string
+	checkOutDate time.Time
+	checkInDate  time.Time
 }
 
 type Library struct {
@@ -39,7 +39,7 @@ func rentBook(books *map[Title]BookInfo, bookTitle Title) {
 	(*books)[bookTitle] = BookInfo{
 		id:           bookInfo.id,
 		available:    false,
-		checkInDate:  time.Now().String(),
+		checkInDate:  time.Now(),
 		checkOutDate: bookInfo.checkOutDate,
 	}
 }
@@ -56,7 +56,7 @@ func recallBook(books *map[Title]BookInfo, bookTitle Title) {
 		id:           bookInfo.id,
 		available:    true,
 		checkInDate:  bookInfo.checkInDate,
-		checkOutDate: time.Now().String(),
+		checkOutDate: time.Now(),
 	}
 }
 
@@ -69,10 +69,10 @@ func libraryExercise() {
 	appendMember(&members, "yasmin")
 
 	books := map[Title]BookInfo{
-		"Clean Code":         {1, true, "", ""},
-		"Fluent Python":      {2, true, "", ""},
-		"Project Phoenix":    {3, true, "", ""},
-		"Clean Architecture": {4, true, "", ""},
+		"Clean Code":         {1, true, time.Time{}, time.Time{}},
+		"Fluent Python":      {2, true, time.Time{}, time.Time{}},
+		"Project Phoenix":    {3, true, time.Time{}, time.Time{}},
+		"Clean Architecture": {4, true, time.Time{}, time.Time{}},
 	}
 
 	stateLibrary := Library{
