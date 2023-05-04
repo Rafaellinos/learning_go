@@ -38,4 +38,6 @@ func main() {
 	exerciseMaps()
 	pointersExample()
 	libraryExercise()
+	mainReceiverTests()
+	mainReceiverFuncExercise()
 }
