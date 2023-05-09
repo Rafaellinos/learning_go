@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -42,7 +42,7 @@ if !found {
 }
 */
 
-func mapsExample() {
+func MapsExample() {
 	myMap := map[string]string{
 		"name":   "Rafael",
 		"age":    "23",
@@ -68,7 +68,7 @@ func createServer(serverName, serverStatus string) map[string]string {
 	}
 }
 
-func exerciseMaps() {
+func ExerciseMaps() {
 	possibleStatus := []string{
 		"Online", "Offline", "Maintenance", "Retired",
 	}

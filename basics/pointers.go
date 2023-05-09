@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -38,7 +38,7 @@ func combatPlayers(playerOffender *Player, playerTarget *Player) {
 	}
 }
 
-func pointersExample() {
+func PointersExample() {
 	//value := 22
 	//var valuePointer *int
 	//fmt.Println(value)

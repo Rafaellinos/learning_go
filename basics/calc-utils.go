@@ -1,4 +1,4 @@
-package main
+package basics
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func calculateAge(year, month, day int) int {
+func CalculateAge(year, month, day int) int {
 	var (
 		now      = time.Now()
 		ageYears = (now.Year() - year) - 1
@@ -20,11 +20,11 @@ func calculateAge(year, month, day int) int {
 	return ageYears
 }
 
-func returnManyExample() (int, int, int) {
+func ReturnManyExample() (int, int, int) {
 	return 1, 2, 3
 }
 
-func reverseString(str string) string {
+func ReverseString(str string) string {
 	var finalStr strings.Builder
 	for lenStr := len(str) - 1; lenStr >= 0; lenStr-- {
 		finalStr.WriteByte(str[lenStr])
@@ -32,8 +32,8 @@ func reverseString(str string) string {
 	return finalStr.String()
 }
 
-func binaryToDecimal(bytesString string) int64 {
-	reversedString := reverseString(bytesString)
+func BinaryToDecimal(bytesString string) int64 {
+	reversedString := ReverseString(bytesString)
 	var sum int64
 	for i := 0; i < len(reversedString); i++ {
 		localRes, err := strconv.ParseInt(string(reversedString[i]), 10, 64)
@@ -45,7 +45,7 @@ func binaryToDecimal(bytesString string) int64 {
 	return sum
 }
 
-func goWhileLoop(num int) {
+func GoWhileLoop(num int) {
 	i := 0
 	for i < num {
 		fmt.Println("current number: ", i)
@@ -53,7 +53,7 @@ func goWhileLoop(num int) {
 	}
 }
 
-func goBreakLoops(randomNum int) {
+func GoBreakLoops(randomNum int) {
 	i := 0
 	for {
 		fmt.Println("In loop ...", i)
@@ -64,7 +64,7 @@ func goBreakLoops(randomNum int) {
 	}
 }
 
-func diceRoller(dice, sides, rolls int) {
+func DiceRoller(dice, sides, rolls int) {
 	randomGem := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := 0; i < dice; i++ {
 		currentRoll := rolls

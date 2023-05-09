@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -18,7 +18,7 @@ type Rectangle struct {
 	width, length int
 }
 
-func getSampleStructures() Sample {
+func GetSampleStructures() Sample {
 	data := Sample{
 		name: "Rafael",
 		age:  32,
@@ -36,10 +36,10 @@ func getSampleStructures() Sample {
 	return data
 }
 
-func calculateRectangleArea(rec Rectangle) int {
+func CalculateRectangleArea(rec Rectangle) int {
 	return rec.length * rec.width
 }
 
-func calculateRectanglePerimeter(rec Rectangle) int {
+func CalculateRectanglePerimeter(rec Rectangle) int {
 	return 2 * (rec.length + rec.width)
 }

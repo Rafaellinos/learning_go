@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -25,7 +25,7 @@ func (p PlayerType) String() string {
 	return fmt.Sprintf("Name: %s, health: %d", p.name, p.health)
 }
 
-func mainReceiverFuncExercise() {
+func MainReceiverFuncExercise() {
 	p := PlayerType{
 		health:    0,
 		energy:    0,

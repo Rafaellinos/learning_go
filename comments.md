@@ -91,3 +91,21 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("hello World"))
 }
 ```
+
+#### Notes
+
+<p>When u have a letter in capital in a function/package, this function will be exported.
+</p>
+
+<h3>e.g.:</h3>
+
+
+```go
+package test
+
+import "fmt"
+
+func Test(msg string) { // will be exported (public) otherwise, private
+	fmt.Println(msg)
+}
+```

@@ -1,4 +1,6 @@
-package main
+package basics
+
+import "fmt"
 
 /*
 working with constants
@@ -78,6 +80,37 @@ const (
 func (d Direction) String() string {
 	return []string{"North", "East", "South", "West"}[d]
 }
-
-
 */
+
+type Operation byte
+
+const (
+	Add Operation = iota
+	Subtract
+	Multiply
+	Divide
+)
+
+func (op Operation) String() string {
+	return []string{"Add", "Subtract", "Multiply", "Divide"}[op]
+}
+
+func (op Operation) calculateExample(num1, num2 int) int {
+	switch op {
+	case Add:
+		return num1 + num2
+	case Subtract:
+		return num1 - num2
+	case Multiply:
+		return num1 * num2
+	case Divide:
+		return num1 / num2
+	default:
+		return 0
+	}
+}
+
+func MainIotaTest() {
+	result := Add.calculateExample(3, 5)
+	fmt.Println(result)
+}

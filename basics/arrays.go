@@ -1,4 +1,4 @@
-package main
+package basics
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ type House struct {
 	name    string
 }
 
-func arraysExample() {
+func ArraysExample() {
 
 	//var myArray [3]int // number of items [3]
 	myArray := [3]int{1, 2, 3}
@@ -51,7 +51,7 @@ type Product struct {
 	price float64
 }
 
-func printProduct(products *[]Product) {
+func PrintProduct(products *[]Product) {
 	productsArray := *products // de-referenciate
 	fmt.Println("Last item:", productsArray[len(productsArray)-1])
 	fmt.Println("Total items:", len(productsArray))
@@ -66,21 +66,21 @@ type StrucEx struct {
 	test string
 }
 
-func testPointers(struc12 *StrucEx) {
+func TestPointers(struc12 *StrucEx) {
 	fmt.Println(struc12)
 }
 
-func exerciseArray() {
+func ExerciseArray() {
 	shoppingList := []Product{ // [] slice, [...] array, [number] array
 		{"Spoon", 5.99},
 		{"Fork", 5.99},
 		{"Plate", 10.00},
 	}
-	printProduct(&shoppingList) // passing variable as reference
+	PrintProduct(&shoppingList) // passing variable as reference
 	shoppingList = append(shoppingList, Product{"Pan", 21.50})
-	printProduct(&shoppingList)
+	PrintProduct(&shoppingList)
 	strucxY := StrucEx{
 		"rafael",
 	}
-	testPointers(&strucxY)
+	TestPointers(&strucxY)
 }

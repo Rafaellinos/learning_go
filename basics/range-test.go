@@ -1,8 +1,8 @@
-package main
+package basics
 
 import "fmt"
 
-func rangeTeste() {
+func RangeTeste() {
 	slice := []string{"Rafael", "Lino"}
 	for idx, value := range slice {
 		fmt.Println("idx:", idx, "value:", value)

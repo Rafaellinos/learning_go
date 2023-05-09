@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -74,7 +74,7 @@ func (park *ParkingLot) emptySpace(spaceNum int) {
 	park.spaces[spaceNum-1].occupied = false
 }
 
-func mainReceiverTests() {
+func MainReceiverTests() {
 	spaces := make([]Space, 10)
 	pl := ParkingLot{
 		spaces: spaces,

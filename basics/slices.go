@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -23,7 +23,7 @@ combined := append(part1, part2...) // passing the whole slice
 
 */
 
-func sliceTesting() {
+func SliceTesting() {
 	slice := make([]int, 10)
 	fmt.Println(slice) // [0 0 0 0 0 0 0 0 0 0]
 	// multidimensional slices
@@ -43,7 +43,7 @@ func showLine(line []Part) {
 	}
 }
 
-func codingExercise() {
+func CodingExercise() {
 	assemblyLine := make([]Part, 3)
 	showLine(assemblyLine)
 	assemblyLine = append(assemblyLine, make([]Part, 2)...)

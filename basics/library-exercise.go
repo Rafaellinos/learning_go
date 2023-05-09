@@ -1,4 +1,4 @@
-package main
+package basics
 
 import (
 	"fmt"
@@ -60,7 +60,7 @@ func recallBook(books *map[Title]BookInfo, bookTitle Title) {
 	}
 }
 
-func libraryExercise() {
+func LibraryExercise() {
 	rafael := Member{
 		"Rafael",
 	}
