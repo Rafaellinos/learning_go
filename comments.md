@@ -109,3 +109,8 @@ func Test(msg string) { // will be exported (public) otherwise, private
 	fmt.Println(msg)
 }
 ```
+
+## Tests
+
+- use _test as suffix for test files. Ex: examplePkg.go -> examplePkg_test.go 
+- unit tests should be in same pkg

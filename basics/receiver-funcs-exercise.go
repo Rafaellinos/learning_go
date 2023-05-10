@@ -3,37 +3,37 @@ package basics
 import "fmt"
 
 type PlayerType struct {
-	health, energy, maxHealth, maxEnergy uint64
-	name                                 string
+	Health, Energy, MaxHealth, MaxEnergy uint64
+	Name                                 string
 }
 
-func (p *PlayerType) setHealth(health uint64) {
-	if health > p.maxHealth {
-		panic(fmt.Sprintf("Cannot apply more than %d health to player %s", p.maxHealth, p.name))
+func (p *PlayerType) SetHealth(health uint64) {
+	if health > p.MaxHealth {
+		panic(fmt.Sprintf("Cannot apply more than %d health to player %s", p.MaxHealth, p.Name))
 	}
-	p.health = health
+	p.Health = health
 }
 
-func (p *PlayerType) setEnergy(energy uint64) {
-	if energy > p.maxEnergy {
-		panic(fmt.Sprintf("Cannot apply more than %d energy to player %s", p.maxEnergy, p.name))
+func (p *PlayerType) SetEnergy(energy uint64) {
+	if energy > p.MaxEnergy {
+		panic(fmt.Sprintf("Cannot apply more than %d energy to player %s", p.MaxEnergy, p.Name))
 	}
-	p.energy = energy
+	p.Energy = energy
 }
 
 func (p PlayerType) String() string {
-	return fmt.Sprintf("Name: %s, health: %d", p.name, p.health)
+	return fmt.Sprintf("Name: %s, health: %d", p.Name, p.Health)
 }
 
 func MainReceiverFuncExercise() {
 	p := PlayerType{
-		health:    0,
-		energy:    0,
-		maxHealth: 100,
-		maxEnergy: 100,
-		name:      "Player one",
+		Health:    0,
+		Energy:    0,
+		MaxHealth: 100,
+		MaxEnergy: 100,
+		Name:      "Player one",
 	}
-	p.setHealth(50)
-	p.setEnergy(50)
+	p.SetHealth(50)
+	p.SetEnergy(50)
 	fmt.Println(p)
 }

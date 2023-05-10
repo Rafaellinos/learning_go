@@ -5,6 +5,23 @@ import (
 	"learning_go/basics"
 )
 
+func init() {
+	// each package has its own init and main
+	fmt.Println("executed before main")
+	/*
+		Ex: compile regex before initializing the package and will be ready
+		var EmailExpr *regex.Regexp
+		func init() {
+			compiled, ok := regexp.Compile(`[0-9]`)
+			if ok != nil {
+				panic("failed to compile")
+			}
+			EmailExpr = compiled
+		}
+
+	*/
+}
+
 func main() {
 	result := basics.CalculateAge(1990, 4, 14)
 	fmt.Println("Your age is:", result)
