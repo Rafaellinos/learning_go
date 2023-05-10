@@ -8,7 +8,8 @@ import (
 func TestPlayerSetAboveMax(t *testing.T) {
 	defer func() {
 		if r := recover(); r == nil {
-			t.Errorf("Function did not panicked.")
+			t.Fatalf("Function did not panicked.")
+			// if it fails, next tests in this scope won't be executed
 		}
 	}()
 

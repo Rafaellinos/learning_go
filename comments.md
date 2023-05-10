@@ -114,3 +114,4 @@ func Test(msg string) { // will be exported (public) otherwise, private
 
 - use _test as suffix for test files. Ex: examplePkg.go -> examplePkg_test.go 
 - unit tests should be in same pkg
+- to run tests with verbose: go test -v ./tests
