@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"learning_go/basics"
+	"learning_go/intermediate"
 )
 
 func init() {
@@ -60,4 +61,5 @@ func main() {
 	basics.MainReceiverFuncExercise()
 	basics.MainIotaTest()
 	basics.MainVariadics()
+	intermediate.MainInterface()
 }
