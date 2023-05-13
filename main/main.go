@@ -62,4 +62,6 @@ func main() {
 	basics.MainIotaTest()
 	basics.MainVariadics()
 	intermediate.MainInterface()
+	intermediate.MainInterfacesDemo()
+	intermediate.MainInterfacesExercise()
 }
