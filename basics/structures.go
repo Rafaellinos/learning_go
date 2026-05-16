@@ -43,3 +43,4 @@ func CalculateRectangleArea(rec Rectangle) int {
 func CalculateRectanglePerimeter(rec Rectangle) int {
 	return 2 * (rec.length + rec.width)
 }
+

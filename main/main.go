@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"learning_go/basics"
-	"learning_go/intermediate"
+	// "learning_go/intermediate"
 )
 
 func init() {
@@ -34,11 +34,11 @@ func main() {
 
 	fmt.Println("decimal result:", basics.BinaryToDecimal("101010"))
 
-	basics.GoWhileLoop(10)
-	basics.GoBreakLoops(10)
-	basics.DiceRoller(2, 6, 3)
+	// basics.GoWhileLoop(10)
+	// basics.GoBreakLoops(10)
+	// basics.DiceRoller(2, 6, 3)
 
-	basics.GetSampleStructures()
+	// basics.GetSampleStructures()
 
 	//rec := basics.Rectangle{
 	//	5,
@@ -46,22 +46,22 @@ func main() {
 	//}
 	//fmt.Println("Perimeter of 5x5 Rectangle is:", basics.CalculateRectanglePerimeter(rec))
 	//fmt.Println("Area of 5x5 Rectangle is:", basics.CalculateRectangleArea(rec))
-	basics.ArraysExample()
-	basics.ExerciseArray()
-	// slices
-	basics.SliceTesting()
-	basics.CodingExercise()
-	basics.ExamplePackage()
-	basics.RangeTeste()
-	basics.MapsExample()
-	basics.ExerciseMaps()
-	basics.PointersExample()
-	basics.LibraryExercise()
-	basics.MainReceiverTests()
-	basics.MainReceiverFuncExercise()
-	basics.MainIotaTest()
-	basics.MainVariadics()
-	intermediate.MainInterface()
-	intermediate.MainInterfacesDemo()
-	intermediate.MainInterfacesExercise()
+	// basics.ArraysExample()
+	// basics.ExerciseArray()
+	// // slices
+	// basics.SliceTesting()
+	// basics.CodingExercise()
+	// basics.ExamplePackage()
+	// basics.MapsExample()
+	// basics.ExerciseMaps()
+	// basics.PointersExample()
+	// basics.LibraryExercise()
+	// basics.MainReceiverTests()
+	// basics.MainReceiverFuncExercise()
+	// basics.MainIotaTest()
+	// basics.MainVariadics()
+	// intermediate.MainInterface()
+	// intermediate.MainInterfacesDemo()
+	// intermediate.MainInterfacesExercise()
 }
+
