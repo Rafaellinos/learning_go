@@ -39,34 +39,35 @@ func main() {
 	for choice != 4 {
 		fmt.Print("Your Choice: ")
 		fmt.Scan(&choice)
-			
-		if choice == 1 {
-			fmt.Printf("Your Balance is: %v\n", accountBalance)
-		} else if choice == 2 {
-			fmt.Print("Value to deposit: ")
-			var depositValue float64
-			fmt.Scan(&depositValue)
-			if depositValue <= 0 {
-				fmt.Println("invalid ammount. Must be greater than 0")
-				continue
-			}
-			accountBalance = accountBalance.Add(decimal.NewFromFloat(depositValue)) // does not mutate the object, no pointer
-			fmt.Printf("Your new Balance is: %v\n", accountBalance)
-		} else if choice == 3 {
-			fmt.Print("Value to withdraw: ")
-			var valueWithdraw float64
-			fmt.Scan(&valueWithdraw)
-			if !checkAmount(accountBalance, valueWithdraw) {
-				fmt.Println("Current balance is: ", accountBalance)
-			} else {
-				accountBalance = accountBalance.Sub(decimal.NewFromFloat(valueWithdraw))
+
+		switch choice {
+			case 1:
+				fmt.Printf("Your Balance is: %v\n", accountBalance)
+			case 2:
+				fmt.Print("Value to deposit: ")
+				var depositValue float64
+				fmt.Scan(&depositValue)
+				if depositValue <= 0 {
+					fmt.Println("invalid ammount. Must be greater than 0")
+					continue
+				}
+				accountBalance = accountBalance.Add(decimal.NewFromFloat(depositValue)) // does not mutate the object, no pointer
 				fmt.Printf("Your new Balance is: %v\n", accountBalance)
-			}
-		} else if choice == 4 {
-			fmt.Println("Goodbye!")
-			return
-		} else {
-			fmt.Println("invalid choice")
+			case 3:
+				fmt.Print("Value to withdraw: ")
+				var valueWithdraw float64
+				fmt.Scan(&valueWithdraw)
+				if !checkAmount(accountBalance, valueWithdraw) {
+					fmt.Println("Current balance is: ", accountBalance)
+				} else {
+					accountBalance = accountBalance.Sub(decimal.NewFromFloat(valueWithdraw))
+					fmt.Printf("Your new Balance is: %v\n", accountBalance)
+				}
+			case 4:
+				fmt.Println("Goodbye!")
+				return
+			default:
+				fmt.Println("invalid choice")
 		}
 		showMenu()
 	}

@@ -74,6 +74,17 @@ func someCalculation(number1, number2 int64) (result int64) {
 
 ## Control structures
 
+### for loops
+
+- `for {}` infinity loop
+- `for value != 4 {}` do something while value different than 4
+- `for i := 0; i < 5; i++ {}` classic for loop
+- `continue` and `break` is also availabe
+- `for n := range 6 {}` in range, last value excluded, starts with 0
+
+### switchs
+
+- `switch variable { case 1: ... default: ...}`
 
 ## add dependencies
 
