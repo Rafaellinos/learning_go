@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"errors"
 	"github.com/shopspring/decimal"
 )
 
@@ -13,23 +14,23 @@ func writeBalanceToFile(balance decimal.Decimal) {
 	os.WriteFile(balanceFileName, []byte(balanceText), 0644)
 }
 
-func getBalanceFromFile() decimal.Decimal {
+func getBalanceFromFile() (decimal.Decimal, error) {
 	// _ is ignored by go compiler
 	if _, err := os.Stat(balanceFileName); err != nil {
 		defaultAmount, _ := decimal.NewFromString("0")
 		writeBalanceToFile(defaultAmount)
-		return defaultAmount
+		return defaultAmount, nil
 	}
 
 	valueByte, err := os.ReadFile(balanceFileName)
 	if err != nil {
-		panic(err)
+		return decimal.Decimal{}, errors.New("Failed to read file")
 	}
 	valueDecimal, err := decimal.NewFromString(string(valueByte))
 	if err != nil {
-		panic(err)
+		return decimal.Decimal{}, errors.New("Failed to parse value from file")
 	}
-	return valueDecimal
+	return valueDecimal, nil
 }
 
 func checkAmount(currentAmount decimal.Decimal, withDrawAmount float64) bool {
@@ -54,7 +55,10 @@ func showMenu() {
 
 func main() {
 
-	accountBalance := getBalanceFromFile()
+	accountBalance, err := getBalanceFromFile()
+	if err != nil {
+		panic(err)
+	}
 
 	fmt.Println("Wecome to Go Bank!")
 	showMenu()
