@@ -33,3 +33,4 @@ func MainInterfacesDemo() {
 	}
 	prepareDishes(dishes)
 }
+
