@@ -85,6 +85,7 @@ func someCalculation(number1, number2 int64) (result int64) {
 ### switchs
 
 - `switch variable { case 1: ... default: ...}`
+- `break` gets out of the swith statement, not the loop if its inside a loop
 
 ## add dependencies
 

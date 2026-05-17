@@ -2,9 +2,35 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"github.com/shopspring/decimal"
 )
 
+const balanceFileName = "balance.txt"
+
+func writeBalanceToFile(balance decimal.Decimal) {
+	balanceText := balance.String()
+	os.WriteFile(balanceFileName, []byte(balanceText), 0644)
+}
+
+func getBalanceFromFile() decimal.Decimal {
+	// _ is ignored by go compiler
+	if _, err := os.Stat(balanceFileName); err != nil {
+		defaultAmount, _ := decimal.NewFromString("0")
+		writeBalanceToFile(defaultAmount)
+		return defaultAmount
+	}
+
+	valueByte, err := os.ReadFile(balanceFileName)
+	if err != nil {
+		panic(err)
+	}
+	valueDecimal, err := decimal.NewFromString(string(valueByte))
+	if err != nil {
+		panic(err)
+	}
+	return valueDecimal
+}
 
 func checkAmount(currentAmount decimal.Decimal, withDrawAmount float64) bool {
 	if withDrawAmount <= 0 {
@@ -28,10 +54,7 @@ func showMenu() {
 
 func main() {
 
-	accountBalance, err := decimal.NewFromString("1000.01")
-	if err != nil {
-		panic(err)
-	}
+	accountBalance := getBalanceFromFile()
 
 	fmt.Println("Wecome to Go Bank!")
 	showMenu()
@@ -52,6 +75,7 @@ func main() {
 					continue
 				}
 				accountBalance = accountBalance.Add(decimal.NewFromFloat(depositValue)) // does not mutate the object, no pointer
+				writeBalanceToFile(accountBalance)
 				fmt.Printf("Your new Balance is: %v\n", accountBalance)
 			case 3:
 				fmt.Print("Value to withdraw: ")
@@ -61,6 +85,7 @@ func main() {
 					fmt.Println("Current balance is: ", accountBalance)
 				} else {
 					accountBalance = accountBalance.Sub(decimal.NewFromFloat(valueWithdraw))
+					writeBalanceToFile(accountBalance)
 					fmt.Printf("Your new Balance is: %v\n", accountBalance)
 				}
 			case 4:
