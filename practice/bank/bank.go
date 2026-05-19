@@ -24,11 +24,11 @@ func getBalanceFromFile() (decimal.Decimal, error) {
 
 	valueByte, err := os.ReadFile(balanceFileName)
 	if err != nil {
-		return decimal.Decimal{}, errors.New("Failed to read file")
+		return decimal.Decimal{}, errors.New("failed to read file")
 	}
 	valueDecimal, err := decimal.NewFromString(string(valueByte))
 	if err != nil {
-		return decimal.Decimal{}, errors.New("Failed to parse value from file")
+		return decimal.Decimal{}, errors.New("failed to parse value from file")
 	}
 	return valueDecimal, nil
 }
