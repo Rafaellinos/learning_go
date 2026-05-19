@@ -51,6 +51,7 @@ func writeHeader() {
 
 func appendCalc(ebt, profit, ratio float64) {
 	// append and write to a file
+	// | is a bitwise operator. O_APPEND OR O_WRONLY = 010 or 001 -> 011
 	file, err := os.OpenFile(calcFileName, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Print(err)
