@@ -8,6 +8,7 @@
 - can use `go run .` to run all files within the same package (must have main func)
 - functions can only be imported with upper case (eg: `somepackage.SomeFunc`)
 - to import packages, use full name (eg: `"github.com/Rafaellinos/bank/fileops"` `fileops.SomeFuncFromFileOps`)
+- go add third-party package: `go get github.com/Pallinder/go-randomdata`
 
 ## modules
 
@@ -49,8 +50,16 @@
 
 ## Pointers
 
+- points to an address
+- avoid unnecessary copies, allow mutate objects
 - `&someVariable` indicates a pointer
 - `func someFunction(value *int)` funcs declared as pointers expects a pointer. eg: `someFunction(&value)`
+- __copies in go are just shallow copies__
+- `anotherInt := &someInt` this creates a pointer variable
+- `var anotherInt *int; anotherInt = &someInt` another way to create variable pointers pointers
+- must **dereference** a pointer in order to extract the value `fmt.Println("value: ", *someIntPointer)`
+- default value for pointers are `nil`. It represents the pointer has no address, no value in memory
+- cannot perform operations in pointer, __must extract the value first__ eg: `*somePointer`
 
 ## Functions
 

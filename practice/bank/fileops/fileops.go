@@ -30,3 +30,4 @@ func GetDecimalFromFile(fileName string) (decimal.Decimal, error) {
 	}
 	return valueDecimal, nil
 }
+
