@@ -5,6 +5,9 @@
 - must have
 - multi-packages
 - `package main` is the entrypoint and its necessary to compiled code
+- can use `go run .` to run all files within the same package (must have main func)
+- functions can only be imported with upper case (eg: `somepackage.SomeFunc`)
+- to import packages, use full name (eg: `"github.com/Rafaellinos/bank/fileops"` `fileops.SomeFuncFromFileOps`)
 
 ## modules
 
