@@ -82,10 +82,6 @@ func someCalculation(number1, number2 int64) (result int64) {
 }
 ```
 
-## Scopes
-
-## Control structures
-
 ### for loops
 
 - `for {}` infinity loop
@@ -103,6 +99,11 @@ func someCalculation(number1, number2 int64) (result int64) {
 
 - `go mod tidy` remove unnused and add missing dependencies
 - `go get package@v123` add this dependency to project
+
+
+## Structs
+
+
 
 ## Utils
 
