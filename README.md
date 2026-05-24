@@ -103,7 +103,21 @@ func someCalculation(number1, number2 int64) (result int64) {
 
 ## Structs
 
+- `type NameStruct struct {}` defines the struct boby
 
+```go
+import ""time"
+type User struct {
+    name string
+    createdAt time.Time
+}
+
+func main {
+    someUser = User{
+        name: "Rafael Veloso"
+    }
+}
+```
 
 ## Utils
 
