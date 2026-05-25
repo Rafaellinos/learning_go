@@ -104,17 +104,73 @@ func someCalculation(number1, number2 int64) (result int64) {
 ## Structs
 
 - `type NameStruct struct {}` defines the struct boby
+- to access a field in struct with pointers: `(*someStruct).someField` that the tecnicall correct whey, but can be done without `*` as a syntax sugar for dereference
 
 ```go
-import ""time"
+import (
+    "time"
+    "fmt"
+)
+
 type User struct {
     name string
     createdAt time.Time
 }
 
 func main {
-    someUser = User{
-        name: "Rafael Veloso"
+    someUser := User{
+        name: "Rafael Veloso",
+        createdAt: time.Now(),
+    }
+    // can omit key, following the sequence keys:
+    anotherUser := User{
+        "Yasmin",
+        time.Now(),
+    }
+    emptyUser := User{} // all nil values
+    fmt.Println("Fullname: ", someUser.name)
+}
+```
+
+### struct methods
+
+- func in a struct is a __method__
+- `func (user User) someMethod() {}` has access to "this" with `user User`
+- syntax = `userInstance.someMethod()`
+- method can mutate its own objects by using pointers `func (user *User) someMethod() {}`
+- contructor are just convention eg: `func New(params...) *User {return &User{}}`
+
+### struct fields
+
+- fields with lower case cannot be accessed, the rule for upper case algo applies to fields
+
+```go
+package user
+
+type User struct {
+    age int // cannot be accessed outside of user package
+    Name string // can be accessed outside of user package
+}
+```
+
+### Struct embedding (like inheritance)
+
+```go
+package user
+
+type Admin struct {
+    email string
+    password string
+    user User // or just user
+}
+
+func newAdmin(email, password string) Admin {
+    return Admin{
+        email: email,
+        password: password,
+        user: User{
+            FirstName: "Name"
+        }
     }
 }
 ```
