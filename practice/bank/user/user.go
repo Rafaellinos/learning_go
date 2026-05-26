@@ -16,6 +16,7 @@ func (user User) GetFullName() string {
 }
 
 // returns a pointer
+// constructor pattern
 func New(firstName, lastName string) *User {
 	newUser := &User{
 		FirstName: firstName,

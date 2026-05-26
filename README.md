@@ -175,8 +175,17 @@ func newAdmin(email, password string) Admin {
 }
 ```
 
+### struct tags
+
+- metadata, like annotation in java
+
 ## Utils
 
 - `gofmt -w yourfile.go` to format
 
+## Custom types (type alias)
+
+- custom types `type str string`
+- can be used with functions. Eg: `func (text str) log() {fmt.Println(text}`
+    * usage: `var name str = "Max";name.log()`
 
