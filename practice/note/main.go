@@ -37,13 +37,13 @@ func getUserInput(prompt string) string {
 	
 	reader := bufio.NewReader(os.Stdin)
 
-	text, err := reader.ReadString('\n')
+	text, err := reader.ReadString('\n') // inform the stop reader
 
 	if err != nil {
 		return ""
 	}
 
-	text = strings.TrimSuffix(text, "\n")
+	text = strings.TrimSuffix(text, "\n") //remove last breakline
 	text = strings.TrimSuffix(text, "\r")
 
 	return text

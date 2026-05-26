@@ -39,14 +39,11 @@ func (note Note) Save() error {
 	if err != nil {
 		return errors.New("error enconding json")
 	}
-	if err != nil {
-		return errors.New("could not save to json")
-	}
 	return os.WriteFile(fileName + ".json", jsonEncoded, 0644)
 }
 
 func (note Note) MarshalJSON() ([]byte, error) {
-	// struct inline + struct tags
+	// struct inline + struct tags (metadata used by json library)
     return json.Marshal(struct {
         Title     string    `json:"title"`
         Content   string    `json:"content"`
