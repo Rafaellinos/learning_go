@@ -179,6 +179,51 @@ func newAdmin(email, password string) Admin {
 
 - metadata, like annotation in java
 
+## interfaces
+
+- sintax `type Saver interface {Save(int, string) error}`
+- convention for interfaces: sufix __er__ like Saver
+- as long as the struct has the same method signature as the interface, it will work without explicit implement the interface
+
+```go
+package main
+import (
+    "fmt"
+    "errors"
+)
+
+type Saver interface {
+    Save() error
+}
+
+type Archive struct {
+    location string
+}
+
+func (ar Archive) Save() error {
+    if ar.location == "" {
+        return errors.New("xiiii")
+    }
+    fmt.Println("Saving in: ", ar.location)
+}
+
+// accept any struct that has the same method signature Save
+func saveData(data Saver) {
+    err := data.Save()
+    if err != nil {
+        panic(err)
+    }
+}
+
+func main() {
+    archive := Archive{
+        location:"/home"
+    }
+    saveData(archive)
+}
+
+```
+
 ## Utils
 
 - `gofmt -w yourfile.go` to format

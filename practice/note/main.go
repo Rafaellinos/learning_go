@@ -8,6 +8,10 @@ import (
 	"strings"
 )
 
+type Saver interface {
+	Save() error
+}
+
 func main() {
 
 	title, content := getNoteData()
@@ -19,8 +23,18 @@ func main() {
 	}
 
 	fmt.Println(newNote.GetTitle())
-	newNote.Save()
+	saveData(newNote)
+	// newNote.Save()
 
+}
+
+// since Note struct has save method, it works
+func saveData(data Saver) error {
+	err := data.Save()
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func getNoteData() (string, string) {
@@ -44,7 +58,7 @@ func getUserInput(prompt string) string {
 	}
 
 	text = strings.TrimSuffix(text, "\n") //remove last breakline
-	text = strings.TrimSuffix(text, "\r")
+	text = strings.TrimSuffix(text, "\r") // remove 
 
 	return text
 }
